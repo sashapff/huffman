@@ -79,6 +79,7 @@ util_EXTERNAL_OBJECTS =
 
 util: CMakeFiles/util.dir/utility.cpp.o
 util: CMakeFiles/util.dir/build.make
+util: libhuffman_lib.a
 util: CMakeFiles/util.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/alexandra/Desktop/huffman/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable util"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/util.dir/link.txt --verbose=$(VERBOSE)

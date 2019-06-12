@@ -3,7 +3,6 @@
 //
 
 #include <iostream>
-#include <cstring>
 #include <fstream>
 #include "huffman.h"
 #include <vector>
@@ -62,7 +61,7 @@ int main(int argc, char *argv[]) {
             std::cout << "error in opening output file" << '\n';
             return 0;
         }
-        std::vector<char> data(SIZE_OF_NUMBER_8);
+        std::vector<char> data(SIZE_OF_NUMBER);
         size_t read;
         huffman tree;
         in.read(data.data(), data.size());
@@ -71,7 +70,7 @@ int main(int argc, char *argv[]) {
             std::cout << "file is damaged\n";
             return 0;
         }
-        auto alphabet_size = tree.decode_number(data.begin(), data.begin() + data.size()) * SIZE_OF_NUMBER_8;
+        auto alphabet_size = tree.decode_number(data.begin(), data.begin() + data.size()) * SIZE_OF_NUMBER;
         in.read(data.data(), data.size());
         read = static_cast<size_t>(in.gcount());
         if (read != data.size()) {
@@ -86,7 +85,7 @@ int main(int argc, char *argv[]) {
             std::cout << "file is damaged\n";
             return 0;
         }
-        tree.count_order_symbols(data);
+        tree.count_order_symbols(data.begin(), data.begin() + data.size());
         data.resize(tree_size);
         in.read(data.data(), data.size());
         read = static_cast<size_t>(in.gcount());
@@ -94,7 +93,7 @@ int main(int argc, char *argv[]) {
             std::cout << "file is damaged\n";
             return 0;
         }
-        tree.decode_build(data);
+        tree.decode_build(data.data(), data.data() + data.size());
         data.resize(BLOCK_SIZE);
         while (!in.eof()) {
             in.read(data.data(), data.size());

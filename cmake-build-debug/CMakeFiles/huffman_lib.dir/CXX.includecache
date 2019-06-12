@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/alexandra/Desktop/huffman/huffman.cpp
+huffman.h
+/Users/alexandra/Desktop/huffman/huffman.h
+
+/Users/alexandra/Desktop/huffman/huffman.h
+array
+-
+queue
+-
+string
+-
+

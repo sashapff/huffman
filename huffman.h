@@ -11,8 +11,8 @@
 
 const size_t BLOCK_SIZE = 1024;
 const size_t ALPHABET_SIZE = 256;
-const size_t SIZE_OF_NUMBER_8 = 8;
-const size_t shift = 128;
+const size_t SIZE_OF_NUMBER = 8;
+const size_t SHIFT = 128;
 
 class huffman {
     struct symbol {
@@ -68,7 +68,6 @@ class huffman {
     };
 
     node *root = nullptr;
-
     std::array<symbol, ALPHABET_SIZE> frequency{};
     std::vector<bool> tree_code;
     std::vector<uint8_t> alphabet_code;
@@ -76,58 +75,15 @@ class huffman {
     std::vector<bool> remaining_bits;
     size_t cnt_symbol = 0;
 
-    void build_code(node *n, std::vector<bool> &current) {
-        if (n == nullptr) {
-            return;
-        }
-        if (n->is_leaf) {
-            alphabet_code.push_back(n->c);
-            symbol_code[n->c + shift] = current;
-            return;
-        }
-        tree_code.push_back(false);
-        current.push_back(false);
-        build_code(n->left, current);
-        current.pop_back();
-        tree_code.push_back(true);
-        current.push_back(true);
-        build_code(n->right, current);
-        current.pop_back();
-    }
+    void build_code(node *n, std::vector<bool> &current);
 
-    std::string encode_symbol(char c) const {
-        std::string result;
-        for (auto i : symbol_code[c + shift]) {
-            result.append(i ? "1" : "0");
-        }
-        return result;
-    }
+    std::string encode_symbol(char c) const;
 
-    std::string encode_alphabet() const {
-        std::string result;
-        for (auto i : alphabet_code) {
-            result.append(convert_uint8_t(i));
-        }
-        return result;
-    }
+    std::string encode_alphabet() const;
 
-    std::string encode_tree() const {
-        std::string result;
-        for (auto i : tree_code) {
-            result.append(i ? "1" : "0");
-        }
-        return result;
-    }
+    std::string encode_tree() const;
 
-    std::string convert_uint8_t(size_t size) const {
-        std::string result;
-        auto begin_size = size;
-        for (size_t i = 0; i < SIZE_OF_NUMBER_8; i++) {
-            result.append(std::to_string(size % 2));
-            size >>= 1;
-        }
-        return result;
-    }
+    std::string convert_uint8_t(size_t size) const;
 
 public:
     huffman() = default;
@@ -139,20 +95,21 @@ public:
     template<typename iterator>
     void update_frequency(iterator begin, iterator end) {
         while (begin != end) {
-            frequency[*begin + shift].cnt++;
+            frequency[*begin + SHIFT].cnt++;
             begin++;
         }
     }
 
-    void count_order_symbols(std::vector<char> &data) {
-        int cnt = 0;
-        for (size_t i = 0; i < data.size(); i += SIZE_OF_NUMBER_8) {
+    template<typename iterator>
+    void count_order_symbols(iterator begin, iterator end) {
+        while (begin != end) {
             size_t number = 0;
-            for (size_t j = SIZE_OF_NUMBER_8; j > 0; j--) {
+            for (size_t j = SIZE_OF_NUMBER; j > 0; j--) {
                 number *= 2;
-                number += (data[i + j - 1] - '0');
+                number += (*(begin + j - 1) - '0');
             }
             alphabet_code.push_back(number);
+            begin += SIZE_OF_NUMBER;
         }
     }
 
@@ -169,7 +126,7 @@ public:
 
     void encode_build() {
         for (size_t i = 0; i < ALPHABET_SIZE; i++) {
-            frequency[i].c = static_cast<char>(i - shift);
+            frequency[i].c = static_cast<char>(i - SHIFT);
         }
         auto node_comp = [](node const *first, node const *second) { return first->cnt > second->cnt; };
         std::priority_queue<node *, std::vector<node *>, decltype(node_comp)> q(node_comp);
@@ -193,10 +150,11 @@ public:
         build_code(root, current_code);
     }
 
-    void decode_build(std::vector<char> &data) {
+    template<typename iterator>
+    void decode_build(iterator begin, iterator end) {
         node *current = new node();
-        for (auto i : data) {
-            if (i == '0') {
+        while (begin != end) {
+            if (*begin == '0') {
                 current->left = new node(current);
                 current = current->left;
             } else {
@@ -208,6 +166,7 @@ public:
                 current->right = new node(current);
                 current = current->right;
             }
+            begin++;
         }
         if (current != nullptr) {
             if (cnt_symbol < alphabet_code.size()) {

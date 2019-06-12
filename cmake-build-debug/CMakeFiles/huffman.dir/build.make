@@ -57,30 +57,61 @@ include CMakeFiles/huffman.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/huffman.dir/flags.make
 
-CMakeFiles/huffman.dir/utility.cpp.o: CMakeFiles/huffman.dir/flags.make
-CMakeFiles/huffman.dir/utility.cpp.o: ../utility.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexandra/Desktop/huffman/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/huffman.dir/utility.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/huffman.dir/utility.cpp.o -c /Users/alexandra/Desktop/huffman/utility.cpp
+CMakeFiles/huffman.dir/gtest/gtest-all.cc.o: CMakeFiles/huffman.dir/flags.make
+CMakeFiles/huffman.dir/gtest/gtest-all.cc.o: ../gtest/gtest-all.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexandra/Desktop/huffman/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/huffman.dir/gtest/gtest-all.cc.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/huffman.dir/gtest/gtest-all.cc.o -c /Users/alexandra/Desktop/huffman/gtest/gtest-all.cc
 
-CMakeFiles/huffman.dir/utility.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/huffman.dir/utility.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alexandra/Desktop/huffman/utility.cpp > CMakeFiles/huffman.dir/utility.cpp.i
+CMakeFiles/huffman.dir/gtest/gtest-all.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/huffman.dir/gtest/gtest-all.cc.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alexandra/Desktop/huffman/gtest/gtest-all.cc > CMakeFiles/huffman.dir/gtest/gtest-all.cc.i
 
-CMakeFiles/huffman.dir/utility.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/huffman.dir/utility.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexandra/Desktop/huffman/utility.cpp -o CMakeFiles/huffman.dir/utility.cpp.s
+CMakeFiles/huffman.dir/gtest/gtest-all.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/huffman.dir/gtest/gtest-all.cc.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexandra/Desktop/huffman/gtest/gtest-all.cc -o CMakeFiles/huffman.dir/gtest/gtest-all.cc.s
+
+CMakeFiles/huffman.dir/gtest/gtest_main.cc.o: CMakeFiles/huffman.dir/flags.make
+CMakeFiles/huffman.dir/gtest/gtest_main.cc.o: ../gtest/gtest_main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexandra/Desktop/huffman/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/huffman.dir/gtest/gtest_main.cc.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/huffman.dir/gtest/gtest_main.cc.o -c /Users/alexandra/Desktop/huffman/gtest/gtest_main.cc
+
+CMakeFiles/huffman.dir/gtest/gtest_main.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/huffman.dir/gtest/gtest_main.cc.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alexandra/Desktop/huffman/gtest/gtest_main.cc > CMakeFiles/huffman.dir/gtest/gtest_main.cc.i
+
+CMakeFiles/huffman.dir/gtest/gtest_main.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/huffman.dir/gtest/gtest_main.cc.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexandra/Desktop/huffman/gtest/gtest_main.cc -o CMakeFiles/huffman.dir/gtest/gtest_main.cc.s
+
+CMakeFiles/huffman.dir/test/testing_huffman.cpp.o: CMakeFiles/huffman.dir/flags.make
+CMakeFiles/huffman.dir/test/testing_huffman.cpp.o: ../test/testing_huffman.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexandra/Desktop/huffman/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/huffman.dir/test/testing_huffman.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/huffman.dir/test/testing_huffman.cpp.o -c /Users/alexandra/Desktop/huffman/test/testing_huffman.cpp
+
+CMakeFiles/huffman.dir/test/testing_huffman.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/huffman.dir/test/testing_huffman.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alexandra/Desktop/huffman/test/testing_huffman.cpp > CMakeFiles/huffman.dir/test/testing_huffman.cpp.i
+
+CMakeFiles/huffman.dir/test/testing_huffman.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/huffman.dir/test/testing_huffman.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexandra/Desktop/huffman/test/testing_huffman.cpp -o CMakeFiles/huffman.dir/test/testing_huffman.cpp.s
 
 # Object files for target huffman
 huffman_OBJECTS = \
-"CMakeFiles/huffman.dir/utility.cpp.o"
+"CMakeFiles/huffman.dir/gtest/gtest-all.cc.o" \
+"CMakeFiles/huffman.dir/gtest/gtest_main.cc.o" \
+"CMakeFiles/huffman.dir/test/testing_huffman.cpp.o"
 
 # External object files for target huffman
 huffman_EXTERNAL_OBJECTS =
 
-huffman: CMakeFiles/huffman.dir/utility.cpp.o
+huffman: CMakeFiles/huffman.dir/gtest/gtest-all.cc.o
+huffman: CMakeFiles/huffman.dir/gtest/gtest_main.cc.o
+huffman: CMakeFiles/huffman.dir/test/testing_huffman.cpp.o
 huffman: CMakeFiles/huffman.dir/build.make
+huffman: libhuffman_lib.a
 huffman: CMakeFiles/huffman.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/alexandra/Desktop/huffman/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable huffman"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/alexandra/Desktop/huffman/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable huffman"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/huffman.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

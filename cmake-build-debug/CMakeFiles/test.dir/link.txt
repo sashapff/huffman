@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -g  -D_GLIBCXX_DEBUG -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/test.dir/gtest/gtest-all.cc.o CMakeFiles/test.dir/gtest/gtest_main.cc.o CMakeFiles/test.dir/test/testing_huffman.cpp.o  -o test libhuffman_lib.a 

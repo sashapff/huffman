@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/huffman.dir/utility.cpp.o"
+  "CMakeFiles/huffman.dir/gtest/gtest-all.cc.o"
+  "CMakeFiles/huffman.dir/gtest/gtest_main.cc.o"
+  "CMakeFiles/huffman.dir/test/testing_huffman.cpp.o"
   "huffman.pdb"
   "huffman"
 )

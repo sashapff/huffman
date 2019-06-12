@@ -17,21 +17,43 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="rebuild_cache">
+			<Target title="test">
+				<Option output="/Users/alexandra/Desktop/huffman/cmake-build-debug/test" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/alexandra/Desktop/huffman/cmake-build-debug"/>
-				<Option type="4"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 test"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="edit_cache">
+			<Target title="test/fast">
+				<Option output="/Users/alexandra/Desktop/huffman/cmake-build-debug/test" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/alexandra/Desktop/huffman/cmake-build-debug"/>
-				<Option type="4"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 test/fast"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -79,7 +101,87 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/alexandra/Desktop/huffman/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/alexandra/Desktop/huffman/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="huffman_lib">
+				<Option output="/Users/alexandra/Desktop/huffman/cmake-build-debug/libhuffman_lib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alexandra/Desktop/huffman/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 huffman_lib"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="huffman_lib/fast">
+				<Option output="/Users/alexandra/Desktop/huffman/cmake-build-debug/libhuffman_lib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alexandra/Desktop/huffman/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 huffman_lib/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
+		<Unit filename="/Users/alexandra/Desktop/huffman/gtest/gtest-all.cc">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/alexandra/Desktop/huffman/gtest/gtest.h">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/alexandra/Desktop/huffman/gtest/gtest_main.cc">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/alexandra/Desktop/huffman/huffman.cpp">
+			<Option target="huffman_lib"/>
+		</Unit>
+		<Unit filename="/Users/alexandra/Desktop/huffman/huffman.h">
+			<Option target="huffman_lib"/>
+		</Unit>
+		<Unit filename="/Users/alexandra/Desktop/huffman/test/testing_huffman.cpp">
+			<Option target="test"/>
+		</Unit>
 		<Unit filename="/Users/alexandra/Desktop/huffman/utility.cpp">
 			<Option target="util"/>
 		</Unit>
