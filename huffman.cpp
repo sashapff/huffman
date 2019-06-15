@@ -9,8 +9,19 @@ void huffman::build_code(huffman::node *n, std::vector<bool> &current) {
         return;
     }
     if (n->is_leaf) {
-        alphabet_code.push_back(n->c);
-        symbol_code[n->c + SHIFT] = current;
+        if (n == root) {
+            tree_code.push_back(false);
+            root->left = new node(root);
+            root->left->c = root->c;
+            root->left->cnt = root->cnt;
+            root->is_leaf = false;
+            current.push_back(false);
+            alphabet_code.push_back(n->c);
+            symbol_code[n->c + SHIFT] = current;
+        } else {
+            alphabet_code.push_back(n->c);
+            symbol_code[n->c + SHIFT] = current;
+        }
         return;
     }
     tree_code.push_back(false);
@@ -34,7 +45,7 @@ std::string huffman::encode_symbol(char c) const {
 std::string huffman::encode_alphabet() const {
     std::string result;
     for (auto i : alphabet_code) {
-        result.append(convert_uint8_t(i));
+        result.append(convert_uint16_t(i));
     }
     return result;
 }
@@ -47,7 +58,7 @@ std::string huffman::encode_tree() const {
     return result;
 }
 
-std::string huffman::convert_uint8_t(size_t size) const {
+std::string huffman::convert_uint16_t(size_t size) const {
     std::string result;
     for (size_t i = 0; i < SIZE_OF_NUMBER; i++) {
         result.append(std::to_string(size % 2));

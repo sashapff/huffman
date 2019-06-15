@@ -59,34 +59,14 @@ void decode(std::string input, std::string output) {
     size_t read;
     huffman tree;
     in.read(data.data(), data.size());
-    read = static_cast<size_t>(in.gcount());
-    if (read != data.size()) {
-        std::cerr << "file is damaged\n";
-        return;
-    }
     auto alphabet_size = tree.decode_number(data.begin(), data.begin() + data.size()) * SIZE_OF_NUMBER;
     in.read(data.data(), data.size());
-    read = static_cast<size_t>(in.gcount());
-    if (read != data.size()) {
-        std::cerr << "file is damaged\n";
-        return;
-    }
     auto tree_size = tree.decode_number(data.begin(), data.begin() + data.size());
     data.resize(alphabet_size);
     in.read(data.data(), data.size());
-    read = static_cast<size_t>(in.gcount());
-    if (read != data.size()) {
-        std::cerr << "file is damaged\n";
-        return;
-    }
     tree.count_order_symbols(data.begin(), data.begin() + data.size());
     data.resize(tree_size);
     in.read(data.data(), data.size());
-    read = static_cast<size_t>(in.gcount());
-    if (read != data.size()) {
-        std::cerr << "file is damaged\n";
-        return;
-    }
     tree.decode_build(data.data(), data.data() + data.size());
     data.resize(BLOCK_SIZE);
     while (!in.eof()) {
@@ -133,6 +113,12 @@ TEST(correctness, empty) {
     ASSERT_TRUE(is_equals("test/empty", "test/output"));
 }
 
+TEST(correctness, empty_with_enter) {
+    encode("test/empty_with_enter", "test/buffer");
+    decode("test/buffer", "test/output");
+    ASSERT_TRUE(is_equals("test/empty_with_enter", "test/output"));
+}
+
 TEST(correctness, palata6) {
     encode("test/palata6", "test/buffer");
     decode("test/buffer", "test/output");
@@ -142,6 +128,16 @@ TEST(correctness, palata6) {
 TEST(correctness, mars) {
     encode("test/mars", "test/buffer");
     decode("test/buffer", "test/output");
+    ASSERT_TRUE(is_equals("test/mars", "test/output"));
+}
+
+TEST(correctness, mars_many_times) {
+    encode("test/mars", "test/buffer");
+    decode("test/buffer", "test/output");
+    for (size_t i = 0; i < 10; i++) {
+        encode("test/output", "test/buffer");
+        decode("test/buffer", "test/output");
+    }
     ASSERT_TRUE(is_equals("test/mars", "test/output"));
 }
 
@@ -155,11 +151,12 @@ void generate(std::string file) {
     srand(time(NULL));
     std::ofstream out;
     out.open(file, std::ios::out);
+    std::string s = "";
     for (size_t i = 0; i < 1e5; i++) {
         char c = (char) ((rand() % SHIFT * 2) - SHIFT);
-        std::string s = "" + c;
-        out.write(s.data(), s.size());
+        s.append(1, c);
     }
+    out.write(s.data(), s.size());
 }
 
 TEST(correctness, random_) {
@@ -168,3 +165,28 @@ TEST(correctness, random_) {
     decode("test/buffer", "test/output");
     ASSERT_TRUE(is_equals("test/random", "test/output"));
 }
+
+//void generate_all() {
+//    std::ofstream out;
+//    out.open("test/all", std::ios::out);
+//    std::string s = "";
+//    for (char i = -128; i < 127; i++) {
+//        s.append(1, i);
+//    }
+//    s.append(1, 127);
+//    out.write(s.data(), s.size());
+//}
+
+TEST(correctness, all) {
+//    generate_all();
+    encode("test/all", "test/buffer");
+    decode("test/buffer", "test/output");
+    ASSERT_TRUE(is_equals("test/all", "test/output"));
+}
+
+TEST(correctness, photo) {
+    encode("test/photo.png", "test/buffer");
+    decode("test/buffer", "test/output");
+    ASSERT_TRUE(is_equals("test/photo.png", "test/output"));
+}
+

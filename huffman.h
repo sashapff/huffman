@@ -11,7 +11,7 @@
 
 const size_t BLOCK_SIZE = 1024;
 const size_t ALPHABET_SIZE = 256;
-const size_t SIZE_OF_NUMBER = 8;
+const size_t SIZE_OF_NUMBER = 16;
 const size_t SHIFT = 128;
 
 class huffman {
@@ -70,7 +70,7 @@ class huffman {
     node *root = nullptr;
     std::array<symbol, ALPHABET_SIZE> frequency{};
     std::vector<bool> tree_code;
-    std::vector<uint8_t> alphabet_code;
+    std::vector<uint16_t> alphabet_code;
     std::array<std::vector<bool>, ALPHABET_SIZE> symbol_code{};
     std::vector<bool> remaining_bits;
     size_t cnt_symbol = 0;
@@ -83,7 +83,7 @@ class huffman {
 
     std::string encode_tree() const;
 
-    std::string convert_uint8_t(size_t size) const;
+    std::string convert_uint16_t(size_t size) const;
 
 public:
     huffman() = default;
@@ -126,7 +126,7 @@ public:
 
     void encode_build() {
         for (size_t i = 0; i < ALPHABET_SIZE; i++) {
-            frequency[i].c = static_cast<char>(i - SHIFT);
+            frequency[i].c = static_cast<char>(static_cast<int>(i) - static_cast<int>(SHIFT));
         }
         auto node_comp = [](node const *first, node const *second) { return first->cnt > second->cnt; };
         std::priority_queue<node *, std::vector<node *>, decltype(node_comp)> q(node_comp);
@@ -180,7 +180,7 @@ public:
     }
 
     std::string encode_headline() {
-        return convert_uint8_t(alphabet_code.size()) + convert_uint8_t(tree_code.size())
+        return convert_uint16_t(alphabet_code.size()) + convert_uint16_t(tree_code.size())
                + encode_alphabet() + encode_tree();
     }
 
