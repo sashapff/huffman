@@ -123,6 +123,32 @@ testing/fast:
 	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/build
 .PHONY : testing/fast
 
+#=============================================================================
+# Target rules for targets named util
+
+# Build rule for target.
+util: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 util
+.PHONY : util
+
+# fast build rule for target.
+util/fast:
+	$(MAKE) -f CMakeFiles/util.dir/build.make CMakeFiles/util.dir/build
+.PHONY : util/fast
+
+#=============================================================================
+# Target rules for targets named huffman_lib
+
+# Build rule for target.
+huffman_lib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 huffman_lib
+.PHONY : huffman_lib
+
+# fast build rule for target.
+huffman_lib/fast:
+	$(MAKE) -f CMakeFiles/huffman_lib.dir/build.make CMakeFiles/huffman_lib.dir/build
+.PHONY : huffman_lib/fast
+
 gtest/gtest-all.o: gtest/gtest-all.cc.o
 
 .PHONY : gtest/gtest-all.o
@@ -177,6 +203,33 @@ gtest/gtest_main.cc.s:
 	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/gtest/gtest_main.cc.s
 .PHONY : gtest/gtest_main.cc.s
 
+huffman.o: huffman.cpp.o
+
+.PHONY : huffman.o
+
+# target to build an object file
+huffman.cpp.o:
+	$(MAKE) -f CMakeFiles/huffman_lib.dir/build.make CMakeFiles/huffman_lib.dir/huffman.cpp.o
+.PHONY : huffman.cpp.o
+
+huffman.i: huffman.cpp.i
+
+.PHONY : huffman.i
+
+# target to preprocess a source file
+huffman.cpp.i:
+	$(MAKE) -f CMakeFiles/huffman_lib.dir/build.make CMakeFiles/huffman_lib.dir/huffman.cpp.i
+.PHONY : huffman.cpp.i
+
+huffman.s: huffman.cpp.s
+
+.PHONY : huffman.s
+
+# target to generate assembly for a file
+huffman.cpp.s:
+	$(MAKE) -f CMakeFiles/huffman_lib.dir/build.make CMakeFiles/huffman_lib.dir/huffman.cpp.s
+.PHONY : huffman.cpp.s
+
 test/testing_huffman.o: test/testing_huffman.cpp.o
 
 .PHONY : test/testing_huffman.o
@@ -204,24 +257,59 @@ test/testing_huffman.cpp.s:
 	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/test/testing_huffman.cpp.s
 .PHONY : test/testing_huffman.cpp.s
 
+utility.o: utility.cpp.o
+
+.PHONY : utility.o
+
+# target to build an object file
+utility.cpp.o:
+	$(MAKE) -f CMakeFiles/util.dir/build.make CMakeFiles/util.dir/utility.cpp.o
+.PHONY : utility.cpp.o
+
+utility.i: utility.cpp.i
+
+.PHONY : utility.i
+
+# target to preprocess a source file
+utility.cpp.i:
+	$(MAKE) -f CMakeFiles/util.dir/build.make CMakeFiles/util.dir/utility.cpp.i
+.PHONY : utility.cpp.i
+
+utility.s: utility.cpp.s
+
+.PHONY : utility.s
+
+# target to generate assembly for a file
+utility.cpp.s:
+	$(MAKE) -f CMakeFiles/util.dir/build.make CMakeFiles/util.dir/utility.cpp.s
+.PHONY : utility.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... testing"
+	@echo "... util"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... testing"
+	@echo "... huffman_lib"
 	@echo "... gtest/gtest-all.o"
 	@echo "... gtest/gtest-all.i"
 	@echo "... gtest/gtest-all.s"
 	@echo "... gtest/gtest_main.o"
 	@echo "... gtest/gtest_main.i"
 	@echo "... gtest/gtest_main.s"
+	@echo "... huffman.o"
+	@echo "... huffman.i"
+	@echo "... huffman.s"
 	@echo "... test/testing_huffman.o"
 	@echo "... test/testing_huffman.i"
 	@echo "... test/testing_huffman.s"
+	@echo "... utility.o"
+	@echo "... utility.i"
+	@echo "... utility.s"
 .PHONY : help
 
 

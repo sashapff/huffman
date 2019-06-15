@@ -5,5 +5,7 @@ CMakeFiles/testing.dir/gtest/gtest-all.cc.o: ../gtest/gtest-all.cc
 
 CMakeFiles/testing.dir/gtest/gtest_main.cc.o: ../gtest/gtest_main.cc
 
+CMakeFiles/testing.dir/test/testing_huffman.cpp.o: ../gtest/gtest.h
+CMakeFiles/testing.dir/test/testing_huffman.cpp.o: ../huffman.h
 CMakeFiles/testing.dir/test/testing_huffman.cpp.o: ../test/testing_huffman.cpp
 

@@ -109,6 +109,7 @@ testing: CMakeFiles/testing.dir/gtest/gtest-all.cc.o
 testing: CMakeFiles/testing.dir/gtest/gtest_main.cc.o
 testing: CMakeFiles/testing.dir/test/testing_huffman.cpp.o
 testing: CMakeFiles/testing.dir/build.make
+testing: libhuffman_lib.a
 testing: CMakeFiles/testing.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/alexandra/Desktop/huffman/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable testing"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testing.dir/link.txt --verbose=$(VERBOSE)

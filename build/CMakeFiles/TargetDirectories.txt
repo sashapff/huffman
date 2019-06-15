@@ -1,3 +1,5 @@
+/Users/alexandra/Desktop/huffman/build/CMakeFiles/testing.dir
+/Users/alexandra/Desktop/huffman/build/CMakeFiles/util.dir
 /Users/alexandra/Desktop/huffman/build/CMakeFiles/rebuild_cache.dir
 /Users/alexandra/Desktop/huffman/build/CMakeFiles/edit_cache.dir
-/Users/alexandra/Desktop/huffman/build/CMakeFiles/testing.dir
+/Users/alexandra/Desktop/huffman/build/CMakeFiles/huffman_lib.dir

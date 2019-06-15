@@ -6,21 +6,15 @@
 
 #IncludeRegexTransform: 
 
+/Users/alexandra/Desktop/huffman/huffman.cpp
+huffman.h
+/Users/alexandra/Desktop/huffman/huffman.h
+
 /Users/alexandra/Desktop/huffman/huffman.h
 array
 -
 queue
 -
 string
--
-
-/Users/alexandra/Desktop/huffman/utility.cpp
-iostream
--
-fstream
--
-huffman.h
-/Users/alexandra/Desktop/huffman/huffman.h
-vector
 -
 
