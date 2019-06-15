@@ -54,16 +54,8 @@ class huffman {
         }
 
         ~node() {
-            if (this == nullptr) {
-                return;
-            }
-            if (left != nullptr) {
-                left->~node();
-            }
-            if (right != nullptr) {
-                right->~node();
-            }
-            operator delete(this);
+            delete left;
+            delete right;
         }
     };
 
@@ -89,7 +81,7 @@ public:
     huffman() = default;
 
     ~huffman() {
-        root->~node();
+        delete root;
     }
 
     template<typename iterator>
@@ -180,8 +172,12 @@ public:
     }
 
     std::string encode_headline() {
-        return convert_uint16_t(alphabet_code.size()) + convert_uint16_t(tree_code.size())
-               + encode_alphabet() + encode_tree();
+        std::string s = "";
+        s.append(convert_uint16_t(alphabet_code.size()));
+        s.append(convert_uint16_t(tree_code.size()));
+        s.append(encode_alphabet());
+        s.append(encode_tree());
+        return s;
     }
 
     template<typename iterator>
