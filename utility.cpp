@@ -36,6 +36,10 @@ int main(int argc, char *argv[]) {
         while (!in.eof()) {
             in.read(data.data(), data.size());
             read = static_cast<size_t>(in.gcount());
+            if (read == 0) {
+                std::cout << "error in reading\n";
+                return 0;
+            }
             tree.update_frequency(data.begin(), data.begin() + read);
         }
         in.clear();
@@ -46,6 +50,10 @@ int main(int argc, char *argv[]) {
         while (!in.eof()) {
             in.read(data.data(), data.size());
             read = static_cast<size_t>(in.gcount());
+            if (read == 0) {
+                std::cout << "error in reading\n";
+                return 0;
+            }
             auto block = tree.encode_block(data.begin(), data.begin() + read);
             out.write(block.data(), block.size());
         }
@@ -99,6 +107,10 @@ int main(int argc, char *argv[]) {
         while (!in.eof()) {
             in.read(data.data(), data.size());
             read = static_cast<size_t>(in.gcount());
+            if (read == 0) {
+                std::cout << "error in reading\n";
+                return 0;
+            }
             auto block = tree.decode_block(data, read);
             out.write(block.data(), block.size());
         }
