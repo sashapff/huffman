@@ -6,6 +6,7 @@
 #include <fstream>
 #include "huffman.h"
 #include <vector>
+#include <cstring>
 
 int main(int argc, char *argv[]) {
     if (argc == 1) {
