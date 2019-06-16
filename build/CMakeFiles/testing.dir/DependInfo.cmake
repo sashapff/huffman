@@ -6,7 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/alexandra/Desktop/huffman/gtest/gtest-all.cc" "/Users/alexandra/Desktop/huffman/build/CMakeFiles/testing.dir/gtest/gtest-all.cc.o"
   "/Users/alexandra/Desktop/huffman/gtest/gtest_main.cc" "/Users/alexandra/Desktop/huffman/build/CMakeFiles/testing.dir/gtest/gtest_main.cc.o"
-  "/Users/alexandra/Desktop/huffman/test/testing_huffman.cpp" "/Users/alexandra/Desktop/huffman/build/CMakeFiles/testing.dir/test/testing_huffman.cpp.o"
+  "/Users/alexandra/Desktop/huffman/build/test/testing_huffman.cpp" "/Users/alexandra/Desktop/huffman/build/CMakeFiles/testing.dir/test/testing_huffman.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

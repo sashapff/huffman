@@ -10,5 +10,5 @@ add_library(huffman_lib STATIC huffman.h huffman.cpp)
 add_executable(util utility.cpp)
 target_link_libraries(util huffman_lib)
 
-add_executable(test gtest/gtest.h gtest/gtest-all.cc gtest/gtest_main.cc test/testing_huffman.cpp)
-target_link_libraries(test huffman_lib)
+add_executable(testing gtest/gtest.h gtest/gtest-all.cc gtest/gtest_main.cc test/testing_huffman.cpp)
+target_link_libraries(testing huffman_lib)

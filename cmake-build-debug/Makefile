@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test
+# Target rules for targets named testing
 
 # Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test
-.PHONY : test
+testing: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testing
+.PHONY : testing
 
 # fast build rule for target.
-test/fast:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-.PHONY : test/fast
+testing/fast:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/build
+.PHONY : testing/fast
 
 #=============================================================================
 # Target rules for targets named util
@@ -155,7 +155,7 @@ gtest/gtest-all.o: gtest/gtest-all.cc.o
 
 # target to build an object file
 gtest/gtest-all.cc.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/gtest/gtest-all.cc.o
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/gtest/gtest-all.cc.o
 .PHONY : gtest/gtest-all.cc.o
 
 gtest/gtest-all.i: gtest/gtest-all.cc.i
@@ -164,7 +164,7 @@ gtest/gtest-all.i: gtest/gtest-all.cc.i
 
 # target to preprocess a source file
 gtest/gtest-all.cc.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/gtest/gtest-all.cc.i
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/gtest/gtest-all.cc.i
 .PHONY : gtest/gtest-all.cc.i
 
 gtest/gtest-all.s: gtest/gtest-all.cc.s
@@ -173,7 +173,7 @@ gtest/gtest-all.s: gtest/gtest-all.cc.s
 
 # target to generate assembly for a file
 gtest/gtest-all.cc.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/gtest/gtest-all.cc.s
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/gtest/gtest-all.cc.s
 .PHONY : gtest/gtest-all.cc.s
 
 gtest/gtest_main.o: gtest/gtest_main.cc.o
@@ -182,7 +182,7 @@ gtest/gtest_main.o: gtest/gtest_main.cc.o
 
 # target to build an object file
 gtest/gtest_main.cc.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/gtest/gtest_main.cc.o
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/gtest/gtest_main.cc.o
 .PHONY : gtest/gtest_main.cc.o
 
 gtest/gtest_main.i: gtest/gtest_main.cc.i
@@ -191,7 +191,7 @@ gtest/gtest_main.i: gtest/gtest_main.cc.i
 
 # target to preprocess a source file
 gtest/gtest_main.cc.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/gtest/gtest_main.cc.i
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/gtest/gtest_main.cc.i
 .PHONY : gtest/gtest_main.cc.i
 
 gtest/gtest_main.s: gtest/gtest_main.cc.s
@@ -200,7 +200,7 @@ gtest/gtest_main.s: gtest/gtest_main.cc.s
 
 # target to generate assembly for a file
 gtest/gtest_main.cc.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/gtest/gtest_main.cc.s
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/gtest/gtest_main.cc.s
 .PHONY : gtest/gtest_main.cc.s
 
 huffman.o: huffman.cpp.o
@@ -236,7 +236,7 @@ test/testing_huffman.o: test/testing_huffman.cpp.o
 
 # target to build an object file
 test/testing_huffman.cpp.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test/testing_huffman.cpp.o
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/test/testing_huffman.cpp.o
 .PHONY : test/testing_huffman.cpp.o
 
 test/testing_huffman.i: test/testing_huffman.cpp.i
@@ -245,7 +245,7 @@ test/testing_huffman.i: test/testing_huffman.cpp.i
 
 # target to preprocess a source file
 test/testing_huffman.cpp.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test/testing_huffman.cpp.i
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/test/testing_huffman.cpp.i
 .PHONY : test/testing_huffman.cpp.i
 
 test/testing_huffman.s: test/testing_huffman.cpp.s
@@ -254,7 +254,7 @@ test/testing_huffman.s: test/testing_huffman.cpp.s
 
 # target to generate assembly for a file
 test/testing_huffman.cpp.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test/testing_huffman.cpp.s
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/test/testing_huffman.cpp.s
 .PHONY : test/testing_huffman.cpp.s
 
 utility.o: utility.cpp.o
@@ -290,7 +290,7 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... test"
+	@echo "... testing"
 	@echo "... util"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"

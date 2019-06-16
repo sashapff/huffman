@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/Users/alexandra/Desktop/huffman/build/test/testing_huffman.cpp
+../../gtest/gtest.h
+/Users/alexandra/Desktop/huffman/gtest/gtest.h
+../../huffman.h
+/Users/alexandra/Desktop/huffman/huffman.h
+fstream
+-
+cstdlib
+-
+ctime
+-
+
 /Users/alexandra/Desktop/huffman/gtest/gtest.h
 limits
 -
@@ -138,17 +150,5 @@ array
 queue
 -
 string
--
-
-/Users/alexandra/Desktop/huffman/test/testing_huffman.cpp
-../gtest/gtest.h
-/Users/alexandra/Desktop/huffman/gtest/gtest.h
-../huffman.h
-/Users/alexandra/Desktop/huffman/huffman.h
-fstream
--
-cstdlib
--
-ctime
 -
 

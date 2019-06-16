@@ -84,17 +84,17 @@ CMakeFiles/testing.dir/gtest/gtest_main.cc.s: cmake_force
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexandra/Desktop/huffman/gtest/gtest_main.cc -o CMakeFiles/testing.dir/gtest/gtest_main.cc.s
 
 CMakeFiles/testing.dir/test/testing_huffman.cpp.o: CMakeFiles/testing.dir/flags.make
-CMakeFiles/testing.dir/test/testing_huffman.cpp.o: ../test/testing_huffman.cpp
+CMakeFiles/testing.dir/test/testing_huffman.cpp.o: test/testing_huffman.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexandra/Desktop/huffman/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/testing.dir/test/testing_huffman.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testing.dir/test/testing_huffman.cpp.o -c /Users/alexandra/Desktop/huffman/test/testing_huffman.cpp
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testing.dir/test/testing_huffman.cpp.o -c /Users/alexandra/Desktop/huffman/build/test/testing_huffman.cpp
 
 CMakeFiles/testing.dir/test/testing_huffman.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testing.dir/test/testing_huffman.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alexandra/Desktop/huffman/test/testing_huffman.cpp > CMakeFiles/testing.dir/test/testing_huffman.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alexandra/Desktop/huffman/build/test/testing_huffman.cpp > CMakeFiles/testing.dir/test/testing_huffman.cpp.i
 
 CMakeFiles/testing.dir/test/testing_huffman.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testing.dir/test/testing_huffman.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexandra/Desktop/huffman/test/testing_huffman.cpp -o CMakeFiles/testing.dir/test/testing_huffman.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexandra/Desktop/huffman/build/test/testing_huffman.cpp -o CMakeFiles/testing.dir/test/testing_huffman.cpp.s
 
 # Object files for target testing
 testing_OBJECTS = \

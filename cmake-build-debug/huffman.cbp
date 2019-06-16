@@ -17,8 +17,8 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="test">
-				<Option output="/Users/alexandra/Desktop/huffman/cmake-build-debug/test" prefix_auto="0" extension_auto="0"/>
+			<Target title="testing">
+				<Option output="/Users/alexandra/Desktop/huffman/cmake-build-debug/testing" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/alexandra/Desktop/huffman/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -32,14 +32,14 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 test"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 testing"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="test/fast">
-				<Option output="/Users/alexandra/Desktop/huffman/cmake-build-debug/test" prefix_auto="0" extension_auto="0"/>
+			<Target title="testing/fast">
+				<Option output="/Users/alexandra/Desktop/huffman/cmake-build-debug/testing" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/alexandra/Desktop/huffman/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -53,7 +53,7 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 test/fast"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 testing/fast"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/alexandra/Desktop/huffman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -165,13 +165,13 @@
 			</Target>
 		</Build>
 		<Unit filename="/Users/alexandra/Desktop/huffman/gtest/gtest-all.cc">
-			<Option target="test"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/alexandra/Desktop/huffman/gtest/gtest.h">
-			<Option target="test"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/alexandra/Desktop/huffman/gtest/gtest_main.cc">
-			<Option target="test"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/alexandra/Desktop/huffman/huffman.cpp">
 			<Option target="huffman_lib"/>
@@ -180,7 +180,7 @@
 			<Option target="huffman_lib"/>
 		</Unit>
 		<Unit filename="/Users/alexandra/Desktop/huffman/test/testing_huffman.cpp">
-			<Option target="test"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/alexandra/Desktop/huffman/utility.cpp">
 			<Option target="util"/>

@@ -10,15 +10,15 @@
 
 void encode(std::string input, std::string output) {
     std::ifstream in;
-    in.open(input, std::ios::in);
+    in.open(input, std::ios::in | std::ios::binary);
     if (!in.is_open()) {
-        std::cerr << "error in opening input file" << '\n';
+        std::cout << "error in opening input file" << '\n';
         return;
     }
     std::ofstream out;
     out.open(output, std::ios::out);
     if (!out.is_open()) {
-        std::cerr << "error in opening output file" << '\n';
+        std::cout << "error in opening output file" << '\n';
         return;
     }
     huffman tree;
@@ -27,6 +27,10 @@ void encode(std::string input, std::string output) {
     while (!in.eof()) {
         in.read(data.data(), data.size());
         read = static_cast<size_t>(in.gcount());
+        if (read == 0 && in.bad()) {
+            std::cout << "error in reading\n";
+            return;
+        }
         tree.update_frequency(data.begin(), data.begin() + read);
     }
     in.clear();
@@ -37,8 +41,16 @@ void encode(std::string input, std::string output) {
     while (!in.eof()) {
         in.read(data.data(), data.size());
         read = static_cast<size_t>(in.gcount());
+        if (read == 0 && in.bad()) {
+            std::cout << "error in reading\n";
+            return;
+        }
         auto block = tree.encode_block(data.begin(), data.begin() + read);
-        out.write(block.data(), block.size());
+        auto length = tree.convert_uint16_t(block.first.size());
+        auto extra_bits = tree.convert_uint16_t(block.second);
+        out.write(length.data(), length.size());
+        out.write(extra_bits.data(), extra_bits.size());
+        out.write(block.first.data(), block.first.size());
     }
 }
 
@@ -46,33 +58,63 @@ void decode(std::string input, std::string output) {
     std::ifstream in;
     in.open(input, std::ios::in);
     if (!in.is_open()) {
-        std::cerr << "error in opening input file" << '\n';
+        std::cout << "error in opening input file" << '\n';
         return;
     }
     std::ofstream out;
     out.open(output, std::ios::out);
     if (!out.is_open()) {
-        std::cerr << "error in opening output file" << '\n';
+        std::cout << "error in opening output file" << '\n';
         return;
     }
-    std::vector<char> data(SIZE_OF_NUMBER);
     size_t read;
     huffman tree;
+    std::vector<char> data(2);
     in.read(data.data(), data.size());
-    auto alphabet_size = tree.decode_number(data.begin(), data.begin() + data.size()) * SIZE_OF_NUMBER;
+    read = in.gcount();
+    if (read != data.size()) {
+        std::cout << "file is damaged\n";
+        return;
+    }
+    auto alphabet_size = tree.decode_number(data.begin(), data.begin() + data.size());
     in.read(data.data(), data.size());
+    read = static_cast<size_t>(in.gcount());
+    if (read != data.size()) {
+        std::cout << "file is damaged\n";
+        return;
+    }
     auto tree_size = tree.decode_number(data.begin(), data.begin() + data.size());
     data.resize(alphabet_size);
     in.read(data.data(), data.size());
+    read = static_cast<size_t>(in.gcount());
+    if (read != data.size()) {
+        std::cout << "file is damaged\n";
+        return;
+    }
     tree.count_order_symbols(data.begin(), data.begin() + data.size());
-    data.resize(tree_size);
+    data.resize((tree_size + SIZE_OF_CHAR - 1) / SIZE_OF_CHAR);
     in.read(data.data(), data.size());
-    tree.decode_build(data.data(), data.data() + data.size());
+    read = static_cast<size_t>(in.gcount());
+    if (read != data.size()) {
+        std::cout << "file is damaged\n";
+        return;
+    }
+    tree.decode_build(data.data(), data.data() + data.size(), tree_size);
     data.resize(BLOCK_SIZE);
+    std::vector<char> number(2);
     while (!in.eof()) {
+        in.read(number.data(), number.size());
+        size_t length = tree.decode_number(number.begin(), number.begin() + number.size());
+        in.read(number.data(), number.size());
+        size_t extra_bits = tree.decode_number(number.begin(), number.begin() + number.size());
+        data.resize(length);
         in.read(data.data(), data.size());
         read = static_cast<size_t>(in.gcount());
-        auto block = tree.decode_block(data, read);
+        if (read == 0 && in.bad()) {
+            std::cout << "error in reading\n";
+            return;
+        }
+        auto block = tree.decode_block(data, read, extra_bits);
         out.write(block.data(), block.size());
     }
 }
